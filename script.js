@@ -1,8 +1,6 @@
-function $(selector) {
-    return document.querySelector(selector);
-}
+const element = document.querySelector(".script-4-text");
 
-$(".script-4-text").addEventListener("click", function () {
-    $(".script-4-text").textContent =
+element.addEventListener("click", function () {
+    element.textContent =
         "Znalazłeś ukryty rabat! Zadzwoń po więcej informacji";
 });
