@@ -28,7 +28,34 @@
     <main>
         <!-- Lewa sekcja -->
         <section class="left">
-
+            <form action="dodaj.php" method="post">
+                <table>
+                    <tr>
+                        <td>ID Klienta</td>
+                        <td><input type="number" name="ID_KLI"></td>
+                    </tr>
+                    <tr>
+                        <td>ID Samochodu</td>
+                        <td><input type="number" name="ID_SAM"></td>
+                    </tr>
+                    <tr>
+                        <td>Data wypożyczenia</td>
+                        <td><input type="date" name="DATA_WYP"></td>
+                    </tr>
+                    <tr>
+                        <td>Data zwrotu</td>
+                        <td><input type="date" name="DATA_ZWR"></td>
+                    </tr>
+                    <tr>
+                        <td>Koszt</td>
+                        <td><input type="number" name="KOSZT"></td>
+                    </tr>
+                    <tr>
+                        <td><button type="reset">Czyść</button></td>
+                        <td><button type="submit">Wstaw</button></td>
+                    </tr>
+                </table>
+            </form>
         </section>
 
         <!-- Prawa sekcja -->
@@ -56,7 +83,7 @@
             <p>Warszawa <br> ul. Wiejska 12 <br> tel. 123456789</p>
         </section>
         <section class="footer-2">
-            <p>Autor strony: <br> 00000000000</p>
+            Autor strony: <br> 00000000000
         </section>
     </footer>
 </body>

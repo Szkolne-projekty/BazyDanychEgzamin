@@ -74,7 +74,7 @@
             <p>Warszawa <br> ul. Wiejska 12 <br> tel. 123456789</p>
         </section>
         <section class="footer-2">
-            <p>Autor strony: <br> 00000000000</p>
+            Autor strony: <br> 00000000000
         </section>
     </footer>
 </body>
