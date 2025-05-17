@@ -1,3 +1,19 @@
+<?php
+
+$conn = mysqli_connect("127.0.0.1", "root", "1234", "samochody");
+
+$sql1 = "SELECT COUNT(*) FROM samochody;";
+$res1 = mysqli_query($conn, $sql1);
+
+$count = mysqli_fetch_row($res1)[0];
+
+$sql2 = "SELECT k.IMIE, k.NAZWISKO, s.MARKA, s.MODEL, s.NR_REJ, w.DATA_WYP, w.DATA_ZWR, w.KOSZT FROM samochody s NATURAL JOIN wypozyczenia w NATURAL JOIN klienci k;";
+$res2 = mysqli_query($conn, $sql2);
+
+mysqli_close($conn);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -43,8 +59,18 @@
                 </thead>
                 <tbody>
                     <!-- Skrypt 2 -->
-                    <?php
-                    ?>
+                    <?php while ($row = mysqli_fetch_assoc($res2)): ?>
+                        <tr>
+                            <td><?= $row["NAZWISKO"]; ?></td>
+                            <td><?= $row["IMIE"]; ?></td>
+                            <td><?= $row["MARKA"]; ?></td>
+                            <td><?= $row["MODEL"]; ?></td>
+                            <td><?= $row["NR_REJ"]; ?></td>
+                            <td><?= $row["DATA_WYP"]; ?></td>
+                            <td><?= $row["DATA_ZWR"]; ?></td>
+                            <td><?= $row["KOSZT"]; ?></td>
+                        </tr>
+                    <?php endwhile; ?>
                 </tbody>
             </table>
         </section>
@@ -59,11 +85,7 @@
                 <h4>Ilość samochodów w bazie</h4>
 
                 <!-- Skrypt 1 -->
-                <?php
-
-
-
-                ?>
+                <p><?= $count; ?></p>
             </section>
         </aside>
     </main>
