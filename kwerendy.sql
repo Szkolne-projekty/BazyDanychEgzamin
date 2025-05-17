@@ -13,7 +13,7 @@ CREATE USER 'wypozyczajacy'@'%' IDENTIFIED BY 'zaq1@WSX';
 
 /* 5. Wyświetl imię, nazwisko, marka, model, nr_rej, data_wyp, data_zw i koszt dla wszystkich
 samochodów, klientów i wypożyczeń (relacja między trzema tabelami). */
-SELECT k.IMIE, k.NAZWISKO, s.MARKA, s.MODEL, s.NR_REJ, w.DATA_WYP, w.DATA_ZWR FROM samochody s NATURAL JOIN wypozyczenia w NATURAL JOIN klienci k;
+SELECT k.IMIE, k.NAZWISKO, s.MARKA, s.MODEL, s.NR_REJ, w.DATA_WYP, w.DATA_ZWR, w.KOSZT FROM samochody s NATURAL JOIN wypozyczenia w NATURAL JOIN klienci k;
 
 /* 6. Dodaj funkcję automatycznej numeracji dla kolumny id_wyp w tabeli wypożyczenia. */
 ALTER TABLE `wypozyczenia` CHANGE `ID_WYP` `ID_WYP` INT NOT NULL AUTO_INCREMENT; 
