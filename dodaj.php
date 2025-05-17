@@ -1,3 +1,29 @@
+<?php
+
+$conn = mysqli_connect("127.0.0.1", "root", "1234", "samochody");
+
+$sql1 = "SELECT COUNT(*) FROM samochody;";
+$res1 = mysqli_query($conn, $sql1);
+
+$count = mysqli_fetch_row($res1)[0];
+
+/* Skrypt 3 */
+if ($_SERVER["REQUEST_METHOD"]) {
+    $ID_KLI = $_POST['ID_KLI'];
+    $ID_SAM = $_POST['ID_SAM'];
+    $DATA_WYP = $_POST['DATA_WYP'];
+    $DATA_ZWR = $_POST['DATA_ZWR'];
+    $KOSZT = $_POST['KOSZT'];
+
+    $sql2 = "INSERT INTO `wypozyczenia` (`ID_WYP`, `ID_SAM`, `ID_KLI`, `DATA_WYP`, `DATA_ZWR`, `KOSZT`) VALUES (NULL, '$ID_SAM', '$ID_KLI', '$DATA_WYP', '$DATA_ZWR', '$KOSZT'); ";
+
+    mysqli_query($conn, $sql2);
+}
+
+mysqli_close($conn);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -64,15 +90,11 @@
                 <img src="auto.png" alt="maluch">
             </section>
             <section class="right-2">
-                <h3>Zawsze niskie ceny!</h3>
+                <h3 class="script-4-text">Zawsze niskie ceny!</h3>
                 <h4>Ilość samochodów w bazie</h4>
 
                 <!-- Skrypt 1 -->
-                <?php
-
-
-
-                ?>
+                <p><?= $count; ?></p>
             </section>
         </aside>
     </main>
@@ -86,6 +108,8 @@
             Autor strony: <br> 00000000000
         </section>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

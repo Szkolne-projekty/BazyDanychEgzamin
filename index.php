@@ -81,7 +81,7 @@ mysqli_close($conn);
                 <img src="auto.png" alt="maluch">
             </section>
             <section class="right-2">
-                <h3>Zawsze niskie ceny!</h3>
+                <h3 class="script-4-text">Zawsze niskie ceny!</h3>
                 <h4>Ilość samochodów w bazie</h4>
 
                 <!-- Skrypt 1 -->
@@ -99,6 +99,8 @@ mysqli_close($conn);
             Autor strony: <br> 00000000000
         </section>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
