@@ -16,7 +16,7 @@ samochodów, klientów i wypożyczeń (relacja między trzema tabelami). */
 SELECT k.IMIE, k.NAZWISKO, s.MARKA, s.MODEL, s.NR_REJ, w.DATA_WYP, w.DATA_ZWR, w.KOSZT FROM samochody s NATURAL JOIN wypozyczenia w NATURAL JOIN klienci k;
 
 /* 6. Dodaj funkcję automatycznej numeracji dla kolumny id_wyp w tabeli wypożyczenia. */
-ALTER TABLE `wypozyczenia` CHANGE `ID_WYP` `ID_WYP` INT NOT NULL AUTO_INCREMENT, ADD PRIMARY KEY (`ID_WYP`); 
+ALTER TABLE `wypozyczenia` CHANGE `ID_WYP` `ID_WYP` INT NOT NULL AUTO_INCREMENT; 
 
 /* 7. Wstaw do tabeli wypożyczenie – id_kli = 100, id_sam = 15, data_wyp = dziś, data_zwr = za
 miesiąc i koszt 1000 */
