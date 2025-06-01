@@ -8,7 +8,7 @@ $res1 = mysqli_query($conn, $sql1);
 $count = mysqli_fetch_row($res1)[0];
 
 /* Skrypt 3 */
-if ($_SERVER["REQUEST_METHOD"]) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ID_KLI = $_POST['ID_KLI'];
     $ID_SAM = $_POST['ID_SAM'];
     $DATA_WYP = $_POST['DATA_WYP'];
