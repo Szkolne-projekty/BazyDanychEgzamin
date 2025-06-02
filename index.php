@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect("127.0.0.1", "root", "1234", "samochody");
+$conn = mysqli_connect("127.0.0.1", "root", "", "samochody");
 
 $sql1 = "SELECT COUNT(*) FROM samochody;";
 $res1 = mysqli_query($conn, $sql1);
